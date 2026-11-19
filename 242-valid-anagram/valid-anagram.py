@@ -1,31 +1,19 @@
 class Solution:
-    def isAnagram(self, s:str , t:str) -> bool:
-        #check if len s == len t
-        #sorted s == sorted t is true
+    def isAnagram(self, s: str, t: str) -> bool:
+        #check if len s and len t are the same
+        #make dictionary countS and countT
+        # go through every char in len(s) 
+        # count char in countT and countS
+
+        countS = {}
+        countT = {} 
         if len(s) != len(t):
             return False
 
+        for i in range(len(s)):
+            countS[s[i]] = countS.get(s[i], 0) + 1
+            countT[t[i]] = countT.get(t[i], 0) + 1
 
-        return sorted(s) == sorted(t)    
+        return countS == countT    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#old
-      #check of length of s == length t
-      #if true then make list to put char s in 
-      #go throgh every char in s to check if every char in s exists in t
-      #return answer
-
-
+        
